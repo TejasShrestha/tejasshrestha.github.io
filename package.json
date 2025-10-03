@@ -1,0 +1,12 @@
+{
+  "name": "tejasshrestha.github.io",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0"
+  }
+}
