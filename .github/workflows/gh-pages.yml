@@ -1,5 +1,8 @@
 name: Build and deploy (Eleventy)
 
+permissions:
+  contents: write
+
 on:
   push:
     branches: [ main ]
@@ -10,6 +13,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Prevent checkout from leaving the default token in the local git config.
+          # This ensures the deploy action uses the provided token correctly.
+          persist-credentials: false
 
       - name: Setup Node
         uses: actions/setup-node@v4
